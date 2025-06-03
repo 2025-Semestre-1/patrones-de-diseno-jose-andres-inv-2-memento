@@ -3,6 +3,12 @@
 ### Nombre y carné de los integrantes: 
 Jose Andres Solano-2022072295
 
-### Enlace del PDF:
+### Diagramas:
 
-[Investigacion2-Jose Andres.pdf](https://github.com/user-attachments/files/20446113/Investigacion2-Jose.Andres.pdf)
+
+[Diagramas-Inve_2.pdf](https://github.com/user-attachments/files/20581974/Diagramas-Inve_2.pdf)
+
+
+
+Codigo:
+[Ejemplo codigo-Memento.txt](https://github.com/user-attachments/files/20581973/Ejemplo.codigo-Memento.txt)
