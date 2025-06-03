@@ -4,11 +4,9 @@
 Jose Andres Solano-2022072295
 
 ### Diagramas:
-
-
 [Diagramas-Inve_2.pdf](https://github.com/user-attachments/files/20581974/Diagramas-Inve_2.pdf)
 
 
 
-Codigo:
+###Codigo:
 [Ejemplo codigo-Memento.txt](https://github.com/user-attachments/files/20581973/Ejemplo.codigo-Memento.txt)
