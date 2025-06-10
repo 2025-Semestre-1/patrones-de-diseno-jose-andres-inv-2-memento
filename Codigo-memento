@@ -1,0 +1,72 @@
+import java.util.Stack;
+
+class EstadoEditor {
+    private final String texto;
+
+    public EstadoEditor(String texto) {
+        this.texto = texto;
+    }
+
+    public String getTexto() {
+        return texto;
+    }
+}
+
+class Editor {
+    private String texto = "";
+//agrega nuevo texto al existente.
+    public void escribir(String nuevoTexto) {
+        texto += nuevoTexto;
+    }
+//devuelve un nuevo EstadoEditor con el estado actual 
+    public EstadoEditor guardarEstado() {
+        return new EstadoEditor(texto);
+    }
+//  c   ambia el estado del editor al guardado en el memento
+    public void restaurar(EstadoEditor estado) {
+        this.texto = estado.getTexto();
+    }
+
+    public String getTexto() {
+        return texto;
+    }
+}
+
+class Historial {
+    private final Stack<EstadoEditor> historial = new Stack<>();
+
+    public void guardar(EstadoEditor estado) {
+        //Anade memento a la pila
+        historial.push(estado);
+    }
+//Me devuelve el ultimo estado de la pila
+    public EstadoEditor deshacer() {
+        if (!historial.isEmpty()) {
+            return historial.pop();
+        }
+        return null;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Editor editor = new Editor();
+        Historial historial = new Historial();
+
+        editor.escribir("Hola");
+        historial.guardar(editor.guardarEstado());
+
+        editor.escribir(" mundo");
+        historial.guardar(editor.guardarEstado());
+
+        editor.escribir(" cruel!");
+
+        System.out.println(editor.getTexto()); // Hola mundo cruel!
+
+        editor.restaurar(historial.deshacer()); // Deshace el ultimo valor de la pila " cruel!"
+        System.out.println(editor.getTexto()); // Hola mundo. O=btenemos los valores actuales
+
+        editor.restaurar(historial.deshacer()); // Deshace " mundo"
+        System.out.println(editor.getTexto()); // Hola
+    }
+}
